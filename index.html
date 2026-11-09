@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Loka Realty | Wayanad Real Estate & Land Investments</title>
+<meta name="description" content="Verified plots, plantations, villas and commercial land in Wayanad, Kerala.">
+<meta name="theme-color" content="#12233C">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--navy:#12233C;--navy2:#1A3254;--terra:#C45738;--terra2:#A94326;--sand:#F7F4EE;--line:#E5DFD3;--text:#1C242C;--muted:#5C6773;--shadow:0 10px 25px -5px rgba(18,35,60,.08),0 8px 10px -6px rgba(18,35,60,.04);--t:all .25s ease}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--sand);color:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--terra);outline-offset:2px}
+.hidden{display:none!important}
+
+header{position:sticky;top:0;z-index:100;background:rgba(247,244,238,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{max-width:1240px;margin:0 auto;padding:.8rem 1.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy)}
+.logo{width:38px;height:38px;background:var(--navy);display:grid;place-items:center;border-radius:6px;color:#fff;font:700 1.5rem 'Cormorant Garamond',serif}
+.brand b{display:block;font:700 1.3rem/1.1 'Cormorant Garamond',serif;letter-spacing:2px;text-transform:uppercase}
+.brand small{font-size:.66rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);font-weight:600}
+.nav-actions{display:flex;align-items:center;gap:.6rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:.6rem 1.1rem;border-radius:8px;border:1px solid transparent;font-size:.88rem;font-weight:600;cursor:pointer;text-decoration:none;transition:var(--t)}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy2)}
+.btn-terra{background:var(--terra);color:#fff}.btn-terra:hover{background:var(--terra2)}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--navy)}.btn-ghost:hover{background:#EDE8DD}
+.btn-wa{background:#25D366;color:#fff}.btn-wa:hover{background:#1EBE5D}
+
+.hero{background:linear-gradient(135deg,rgba(18,35,60,.84),rgba(11,23,40,.92)),url('https://images.unsplash.com/photo-1544984243-ec57ea16fe25?w=1600') center/cover;color:#fff;padding:4.5rem 1.25rem 6rem;text-align:center}
+.hero h2{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:500;line-height:1.12;margin-bottom:1rem;color:#FDFBF7}
+.hero p{max-width:620px;margin:0 auto 1.6rem;color:#D3DCE6;font-weight:300;font-size:1.05rem}
+.hero-stats{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;font-size:.9rem;color:#E8EEF5}
+.hero-stats span i{color:#F8B4A0;margin-right:6px}
+
+.filters{position:sticky;top:64px;z-index:50;max-width:1000px;margin:-3rem auto 0;padding:0 1rem}
+.filter-card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 15px 35px -8px rgba(0,0,0,.18);padding:1rem 1.1rem}
+.search-row{display:grid;grid-template-columns:1fr auto auto auto;gap:.6rem}
+.field{position:relative}
+.field i{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.85rem;pointer-events:none}
+.field input,.field select,.sort{width:100%;border:1px solid #D6D0C2;border-radius:8px;padding:.7rem .8rem .7rem 2.1rem;font:inherit;font-size:.9rem;background:#FAF8F5;color:var(--text);height:44px}
+.sort{padding-left:.8rem}
+.field input:focus,.field select:focus,.sort:focus{border-color:var(--navy);background:#fff}
+.chips{display:flex;gap:.5rem;overflow-x:auto;padding-top:.8rem;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--sand);color:var(--navy);padding:.4rem .95rem;border-radius:50px;font-size:.82rem;font-weight:600;cursor:pointer;transition:var(--t)}
+.chip:hover{background:#EDE8DD}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+
+main{max-width:1240px;margin:0 auto;padding:2rem 1.25rem 4rem}
+.head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.head h3{font-size:2.1rem;color:var(--navy);line-height:1.1}
+.head p{color:var(--muted);font-size:.9rem}
+#count{font-size:.88rem;color:var(--muted);font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.6rem}
+.card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:var(--t);cursor:pointer}
+.card:hover{transform:translateY(-4px);border-color:#D3C9B8}
+.card-img{position:relative;height:210px;background:#E0DAD0;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:12px;left:12px;background:var(--navy);color:#fff;font-size:.72rem;font-weight:700;padding:.3rem .75rem;border-radius:5px}
+.badge.ex{background:var(--terra)}
+.card-body{padding:1.25rem;display:flex;flex-direction:column;flex:1}
+.price{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;margin-bottom:.4rem}
+.price b{font:700 1.5rem 'Cormorant Garamond',serif;color:var(--terra)}
+.price b small{font:400 .82rem 'Plus Jakarta Sans',sans-serif;color:var(--muted)}
+.price span{font-size:.82rem;color:var(--muted)}
+.card h4{font-size:1.4rem;color:var(--navy);line-height:1.25;margin-bottom:.35rem}
+.loc{font-size:.87rem;color:var(--muted);margin-bottom:1rem}
+.loc i{margin-right:6px}
+.specs{display:flex;flex-wrap:wrap;gap:.4rem 1rem;padding:.8rem 0;border-top:1px solid #EFEAE0;margin-bottom:1rem;font-size:.8rem;color:var(--muted)}
+.specs i{color:var(--navy);margin-right:5px}
+.actions{display:flex;gap:.6rem;margin-top:auto}
+.actions .btn{flex:1;padding:.65rem;font-size:.82rem}
+
+.skel{height:420px;border-radius:14px;background:linear-gradient(90deg,#ECE6DA 25%,#F4F0E7 50%,#ECE6DA 75%);background-size:200% 100%;animation:sh 1.3s infinite}
+@keyframes sh{to{background-position:-200% 0}}
+.empty{grid-column:1/-1;text-align:center;padding:3.5rem 1rem;background:#fff;border-radius:12px}
+.empty i{font-size:2rem;color:#999;margin-bottom:.8rem}.empty h4{font-size:1.5rem}
+.empty p{color:var(--muted);font-size:.9rem;margin:.3rem 0 1rem}
+
+.modal{display:none;position:fixed;inset:0;background:rgba(18,35,60,.65);backdrop-filter:blur(4px);z-index:1000;justify-content:center;align-items:center;padding:1rem}
+.modal.on{display:flex}
+.win{background:#fff;max-width:640px;width:100%;max-height:92vh;overflow-y:auto;border-radius:16px;position:relative;animation:pop .25s ease}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.97)}}
+.x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.92);border:1px solid var(--line);cursor:pointer;font-size:1.2rem;z-index:2}
+.win img.hero-img{width:100%;height:270px;object-fit:cover}
+.pad{padding:1.6rem}
+.props{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;background:var(--sand);padding:1.1rem;border-radius:10px;margin:1.1rem 0;font-size:.85rem}
+.props span{display:block;color:var(--muted);font-size:.75rem}
+.pad label{font-size:.8rem;font-weight:600;color:var(--muted)}
+.pad input[type=text],.pad input[type=password]{width:100%;padding:.75rem;border:1px solid #CCC;border-radius:8px;margin:.35rem 0 1rem;font:inherit;font-size:.9rem}
+.err{color:#B3261E;font-size:.82rem;margin:-.5rem 0 .8rem}
+.row{display:flex;gap:.6rem;flex-wrap:wrap}.row .btn{flex:1}
+.status-box{background:var(--sand);border-radius:10px;padding:.8rem 1rem;font-size:.85rem;margin:1rem 0}
+
+.install-bar{position:fixed;left:1rem;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom));z-index:200;background:var(--navy);color:#fff;border-radius:14px;padding:.8rem 1rem;display:flex;align-items:center;gap:.8rem;box-shadow:0 12px 30px rgba(0,0,0,.3);max-width:520px;margin:0 auto}
+.install-bar p{flex:1;font-size:.85rem;line-height:1.35}
+.install-bar button.close{background:none;border:0;color:#A9B7C6;font-size:1.3rem;cursor:pointer}
+.toast{position:fixed;bottom:5rem;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:.7rem 1.2rem;border-radius:50px;font-size:.88rem;z-index:2000;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.fab{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom));z-index:90;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 8px 20px rgba(0,0,0,.25);text-decoration:none}
+
+footer{background:var(--navy);color:#D2D9E2;padding:3.5rem 1.25rem 1.5rem}
+.fgrid{max-width:1240px;margin:0 auto 2.5rem;display:grid;grid-template-columns:2fr 1fr 1.5fr;gap:2.5rem}
+footer h4{color:#fff;font-size:1.3rem;margin-bottom:1rem}
+footer p,footer li a{font-size:.88rem;color:#A9B7C6;text-decoration:none}
+footer ul{list-style:none}footer li{margin-bottom:.55rem}
+footer a:hover{color:#fff}
+.fbottom{max-width:1240px;margin:0 auto;padding-top:1.5rem;border-top:1px solid #2A4060;display:flex;justify-content:space-between;font-size:.8rem;color:#7D8E9F}
+.fbottom button{background:none;border:0;color:#7D8E9F;cursor:pointer;font-size:.8rem}.fbottom button:hover{color:#fff}
+
+@media(max-width:760px){
+ .nav-actions .phone-txt{display:none}
+ .search-row{grid-template-columns:1fr 1fr}.search-row .field:first-child{grid-column:1/-1}
+ .filters{top:62px}
+ .fgrid{grid-template-columns:1fr}
+ .props{grid-template-columns:1fr}
+ .grid{grid-template-columns:1fr}
+ .fbottom{flex-direction:column;gap:.5rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="nav">
+  <a href="#" class="brand"><div class="logo">L</div><div><b>Loka Realty</b><small>Real Estate</small></div></a>
+  <div class="nav-actions">
+   <button id="installBtn" class="btn btn-ghost hidden"><i class="fa-solid fa-download"></i> Install app</button>
+   <a href="tel:+918590150456" class="btn btn-navy"><i class="fa-solid fa-phone"></i><span class="phone-txt">+91 85901 50456</span></a>
+  </div>
+ </div>
+</header>
+
+<section class="hero">
+ <h2>Find a place that belongs to you.</h2>
+ <p>Hand-picked plots, hill plantations and commercial land across Wayanad, with verified titles and direct support.</p>
+ <div class="hero-stats">
+  <span><i class="fa-solid fa-shield-halved"></i>Verified title deeds</span>
+  <span><i class="fa-solid fa-route"></i>Free site visits</span>
+  <span><i class="fa-brands fa-whatsapp"></i>Instant WhatsApp help</span>
+ </div>
+</section>
+
+<div class="filters">
+ <div class="filter-card">
+  <div class="search-row">
+   <div class="field"><i class="fa-solid fa-magnifying-glass"></i><input type="search" id="q" placeholder="Search by name, place or cents" aria-label="Search properties"></div>
+   <div class="field"><i class="fa-solid fa-location-dot"></i><select id="loc" aria-label="Area or town"><option value="">All areas</option></select></div>
+   <select id="sort" class="sort" aria-label="Sort">
+    <option value="">Newest first</option>
+    <option value="low">Price: low to high</option>
+    <option value="high">Price: high to low</option>
+   </select>
+   <button id="reset" class="btn btn-ghost" style="height:44px">Reset</button>
+  </div>
+  <div class="chips" id="chips" aria-label="Property type"></div>
+ </div>
+</div>
+
+<main>
+ <div class="head">
+  <div><h3>Available properties</h3><p>Verified titles, site visits and WhatsApp support.</p></div>
+  <div id="count"></div>
+ </div>
+ <div class="grid" id="grid"></div>
+</main>
+
+<a class="fab" id="fab" href="https://wa.me/918590150456" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<!-- Property detail -->
+<div class="modal" id="detail"><div class="win">
+ <button class="x" data-close aria-label="Close">&times;</button>
+ <img id="mImg" class="hero-img" alt="">
+ <div class="pad">
+  <span id="mBadge" class="badge" style="position:static;display:inline-block;margin-bottom:.5rem"></span>
+  <h3 id="mTitle" style="font-size:1.9rem;color:var(--navy);line-height:1.2"></h3>
+  <p id="mLoc" style="color:var(--muted);font-size:.92rem"></p>
+  <div style="margin-top:.7rem"><b id="mPrice" style="font:700 1.5rem 'Cormorant Garamond',serif;color:var(--terra)"></b> <span id="mTotal" style="font-size:.85rem;color:var(--muted)"></span></div>
+  <p id="mDesc" style="font-size:.92rem;margin:1rem 0"></p>
+  <div class="props">
+   <div><span>Road access</span><b id="mRoad"></b></div>
+   <div><span>Water source</span><b id="mWater"></b></div>
+   <div><span>Title status</span><b id="mDeed"></b></div>
+   <div><span>Property type</span><b id="mType"></b></div>
+  </div>
+  <div class="row">
+   <a id="mWa" target="_blank" rel="noopener" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp agent</a>
+   <a href="tel:+918590150456" class="btn btn-navy"><i class="fa-solid fa-phone"></i> Call</a>
+   <button id="mShare" class="btn btn-ghost"><i class="fa-solid fa-share-nodes"></i> Share</button>
+  </div>
+ </div>
+</div></div>
+
+<!-- Admin login -->
+<div class="modal" id="login"><div class="win" style="max-width:400px"><button class="x" data-close aria-label="Close">&times;</button>
+ <form class="pad" id="loginForm" onsubmit="return false">
+  <h3 style="font-size:1.7rem;color:var(--navy)">Admin login</h3>
+  <p style="font-size:.88rem;color:var(--muted);margin:.3rem 0 1rem">Sign in to manage the Google Sheet connection.</p>
+  <label for="pw">Password</label>
+  <input type="password" id="pw" autocomplete="current-password" required>
+  <div class="err hidden" id="loginErr">Incorrect password. Try again.</div>
+  <button type="button" id="loginBtn" class="btn btn-navy" style="width:100%">Sign in</button>
+  <p style="font-size:.7rem;color:#999;text-align:center;margin-top:.8rem">Site version 3</p>
+ </form>
+</div></div>
+
+<!-- Admin panel -->
+<div class="modal" id="admin"><div class="win" style="max-width:520px"><button class="x" data-close aria-label="Close">&times;</button>
+ <div class="pad">
+  <h3 style="font-size:1.7rem;color:var(--navy)">Google Sheet sync</h3>
+  <p style="font-size:.88rem;color:var(--muted);margin:.3rem 0 1rem">Paste the <b>Published CSV link</b> (File &rarr; Share &rarr; Publish to web &rarr; CSV). Property types and areas update automatically from the sheet.</p>
+  <label for="csv">Published CSV URL</label>
+  <input type="text" id="csv" placeholder="https://docs.google.com/spreadsheets/d/e/.../pub?output=csv">
+  <div class="row">
+   <button id="saveCsv" class="btn btn-navy" style="flex:2"><i class="fa-solid fa-rotate"></i> Save & sync</button>
+   <button id="useDefault" class="btn btn-ghost">Use sample data</button>
+  </div>
+  <div class="status-box" id="adminStatus"></div>
+  <p style="font-size:.78rem;color:var(--muted)">This link is saved in this browser only. To show the sheet to <b>all visitors</b>, paste the same link into <code>SHEET_CSV_URL</code> at the top of the script in index.html.</p>
+  <button id="logout" class="btn btn-ghost" style="margin-top:1rem;width:100%"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
+ </div>
+</div></div>
+
+<!-- iOS install help -->
+<div class="modal" id="iosHelp"><div class="win" style="max-width:380px"><button class="x" data-close aria-label="Close">&times;</button>
+ <div class="pad"><h3 style="font-size:1.6rem;color:var(--navy)">Install on iPhone</h3>
+  <p style="font-size:.92rem;margin-top:.6rem">1. Tap the <b>Share</b> button <i class="fa-solid fa-arrow-up-from-bracket"></i> in Safari.<br>2. Choose <b>Add to Home Screen</b>.<br>3. Tap <b>Add</b>.</p></div>
+</div></div>
+
+<div class="install-bar hidden" id="installBar">
+ <div class="logo" style="flex:none">L</div>
+ <p><b>Install Loka Realty</b><br>Open listings faster from your home screen.</p>
+ <button class="btn btn-terra" id="installBarBtn" style="padding:.5rem .9rem">Install</button>
+ <button class="close" id="installBarClose" aria-label="Dismiss">&times;</button>
+</div>
+
+<footer>
+ <div class="fgrid">
+  <div><h4>Loka Realty</h4><p>Real estate consultants for residential plots, plantations, hill villas and commercial land in Wayanad.</p></div>
+  <div><h4>Services</h4><ul><li><a href="#">Plot buying & selling</a></li><li><a href="#">Estate due diligence</a></li><li><a href="#">Title deed verification</a></li><li><a href="#">Direct site inspections</a></li></ul></div>
+  <div><h4>Contact</h4>
+   <p><a href="tel:+918590150456" style="color:inherit;text-decoration:none"><i class="fa-solid fa-phone" style="margin-right:8px"></i>+91 85901 50456</a></p>
+   <p><i class="fa-solid fa-location-dot" style="margin-right:8px"></i>Wayanad, Kerala, India</p>
+   <p><a href="https://www.instagram.com/lokarealty" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><i class="fa-brands fa-instagram" style="margin-right:8px"></i>@lokarealty</a></p></div>
+ </div>
+ <div class="fbottom"><div>&copy; 2026 Loka Realty. All rights reserved.</div><button id="adminLink"><i class="fa-solid fa-lock"></i> Admin</button></div>
+</footer>
+
+<script>
+/* ===== SETTINGS ===== */
+const SHEET_CSV_URL = "";           // Paste your Published CSV link here so ALL visitors see the sheet
+const ADMIN_HASH = "3c0bf06f76b371dab548df25eb6d19d53d1d5543fbf352d3047da03a0ee341f0";      // SHA-256 of the admin password (see README)
+const WA = "918590150456";
+const FALLBACK_IMG = "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800";
+
+const SAMPLE = [
+ {id:"LK-101",title:"16 Cents Prime Residential Land",type:"Plot/Land",location:"Mananthavady",cents:"16",pricePerCent:"1,50,000",totalPrice:"24,00,000",badge:"Exclusive",imageUrl:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800",roadAccess:"Tar road, 300m from Delaney Bhavan",water:"Borewell & Panchayat water",titleDeed:"Clear title, single owner",description:"Prime residential plot 300 m from Delaney Bhavan in Mananthavady. Ideal for an independent villa or homestay."},
+ {id:"LK-102",title:"2 House Plots Near Town",type:"Plot/Land",location:"Mananthavady",cents:"10",pricePerCent:"2,75,000",totalPrice:"27,50,000",badge:"Hot Deal",imageUrl:"https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=800",roadAccess:"Panchayat concrete road",water:"Open well",titleDeed:"Clear mutation, tax paid",description:"Two ready-to-build house plots near Mananthavady town with green views."},
+ {id:"LK-103",title:"4.5 Acres Tea & Coffee Estate",type:"Plantation",location:"Meppadi",cents:"450",pricePerCent:"65,000",totalPrice:"2,92,50,000",badge:"High Yield",imageUrl:"https://images.unsplash.com/photo-1544984243-ec57ea16fe25?w=800",roadAccess:"Private estate road",water:"Perennial stream",titleDeed:"Freehold clean title",description:"Productive tea and Robusta coffee plantation with a small manager cottage."},
+ {id:"LK-104",title:"3 BHK Contemporary Hill Villa",type:"Residential",location:"Sulthan Bathery",cents:"18",pricePerCent:"3,10,000",totalPrice:"55,80,000",badge:"Move-in Ready",imageUrl:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",roadAccess:"Tar road frontage",water:"Borewell with filtration",titleDeed:"Building permit & clear deed",description:"Minimalist 3-bedroom villa with stone accents, misty views and a landscaped garden."},
+ {id:"LK-105",title:"Commercial Highway Frontage Plot",type:"Commercial",location:"Kalpetta",cents:"25",pricePerCent:"4,20,000",totalPrice:"1,05,00,000",badge:"Investment",imageUrl:"https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800",roadAccess:"National Highway frontage",water:"Municipal line",titleDeed:"Commercial clearance verified",description:"Commercial land facing the main highway in Kalpetta, suited to hotels, showrooms or retail."}
+];
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const num = s => parseFloat(String(s).replace(/[^0-9.]/g,"")) || 0;
+const K = {url:"loka_sheet_csv_url", cache:"loka_sheet_cache", admin:"loka_admin"};
+const store = {
+ get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},
+ set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},
+ del:k=>{try{localStorage.removeItem(k)}catch(e){}}
+};
+
+let props = [], activeType = "", source = "sample";
+
+/* ===== CSV ===== */
+function parseCSV(t){
+ const rows=[];let r=[],f="",q=false;
+ for(let i=0;i<t.length;i++){
+  const c=t[i],n=t[i+1];
+  if(c==='"'){ if(q&&n==='"'){f+='"';i++}else q=!q }
+  else if(c===','&&!q){r.push(f.trim());f=""}
+  else if((c==='\n'||c==='\r')&&!q){ if(c==='\r'&&n==='\n')i++; r.push(f.trim()); if(r.some(v=>v))rows.push(r); r=[];f="" }
+  else f+=c;
+ }
+ if(f||r.length){r.push(f.trim()); if(r.some(v=>v))rows.push(r)}
+ return rows;
+}
+function driveUrl(u){
+ if(!u) return FALLBACK_IMG;
+ if(u.includes("drive.google.com")){const m=u.match(/\/d\/([\w-]+)/)||u.match(/id=([\w-]+)/); if(m) return "https://lh3.googleusercontent.com/d/"+m[1]}
+ return u;
+}
+function fromRows(rows){
+ const h=rows[0].map(x=>x.toLowerCase().replace(/[^a-z0-9]/g,""));
+ const col=(names,fb)=>{for(const n of names){const i=h.indexOf(n);if(i>-1)return i}return fb};
+ const C={
+  id:col(["id","sl","no","code","propertyid"],0), title:col(["title","propertytitle","name","heading","propertyname"],1),
+  type:col(["type","propertytype","category","kind"],2), loc:col(["location","place","town","area","city"],3),
+  cents:col(["cents","cent","extent","size","plotsize"],4), pc:col(["pricepercent","pricecent","ratepercent","ratecent","rate","price"],5),
+  total:col(["totalprice","total","amount","totalamount"],6), status:col(["status","state","availability"],7),
+  badge:col(["badge","tag","highlight","featured"],8), img:col(["imageurl","image","photo","img","photos","picture","driveurl"],9),
+  road:col(["roadaccess","road","access","frontage"],10), water:col(["water","watersource","waterfacility"],11),
+  deed:col(["titledeed","deed","documents","ownership"],12), desc:col(["description","desc","details","about"],13)
+ };
+ return rows.slice(1).filter(r=>r.length>1).map((r,i)=>{
+  const v=(k,d="")=>(r[C[k]]||"").trim()||d;
+  return {id:v("id","LK-"+(101+i)),title:v("title","Wayanad property"),type:v("type","Plot/Land"),location:v("loc","Wayanad"),cents:v("cents"),
+   pricePerCent:v("pc","On request"),totalPrice:v("total","-"),status:v("status","Available"),badge:v("badge"),imageUrl:driveUrl(v("img")),
+   roadAccess:v("road","Road access"),water:v("water","Available"),titleDeed:v("deed","Verified"),description:v("desc")};
+ }).filter(p=>!/^(sold|inactive|hidden)$/i.test(p.status));
+}
+async function loadSheet(url){
+ const res=await fetch(url,{cache:"no-store"});
+ if(!res.ok) throw new Error("HTTP "+res.status);
+ const rows=parseCSV(await res.text());
+ if(rows.length<2) throw new Error("Sheet is empty");
+ store.set(K.cache,JSON.stringify(rows));
+ return fromRows(rows);
+}
+function sheetUrl(){ return store.get(K.url) || SHEET_CSV_URL || ""; }
+
+async function init(){
+ $("grid").innerHTML='<div class="skel"></div>'.repeat(3);
+ const url=sheetUrl();
+ if(url){
+  try{ props=await loadSheet(url); source="sheet"; }
+  catch(e){
+   const c=store.get(K.cache);
+   if(c){try{props=fromRows(JSON.parse(c));source="cache"}catch(_){props=SAMPLE}}
+   else{props=SAMPLE;source="sample"}
+  }
+ } else props=SAMPLE;
+ buildFilters(); render(); updateAdminStatus();
+}
+
+/* ===== Filters built from data ===== */
+const uniq = key => [...new Set(props.map(p=>(p[key]||"").trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+function buildFilters(){
+ const prevLoc=$("loc").value;
+ const locs=uniq("location");
+ $("loc").innerHTML='<option value="">All areas</option>'+locs.map(l=>`<option value="${esc(l)}">${esc(l)}</option>`).join("");
+ $("loc").value=locs.includes(prevLoc)?prevLoc:"";
+ const types=uniq("type");
+ if(activeType && !types.includes(activeType)) activeType="";
+ $("chips").innerHTML=['All',...types].map(t=>{
+  const val=t==='All'?'':t;
+  return `<button class="chip${val===activeType?' on':''}" data-type="${esc(val)}">${esc(t)}</button>`;
+ }).join("");
+}
+
+/* ===== Render ===== */
+function render(){
+ const q=$("q").value.trim().toLowerCase(), loc=$("loc").value, sort=$("sort").value;
+ let list=props.filter(p=>
+  (!q||[p.title,p.location,p.cents,p.type].join(" ").toLowerCase().includes(q)) &&
+  (!activeType||p.type===activeType) && (!loc||p.location===loc));
+ if(sort) list=[...list].sort((a,b)=>sort==="low"?num(a.pricePerCent)-num(b.pricePerCent):num(b.pricePerCent)-num(a.pricePerCent));
+ $("count").textContent=`${list.length} ${list.length===1?"property":"properties"}`;
+ if(!list.length){
+  $("grid").innerHTML=`<div class="empty"><i class="fa-solid fa-magnifying-glass"></i><h4>No properties match</h4><p>Try another area or type, or clear your filters.</p><button class="btn btn-navy" data-reset>Clear filters</button></div>`;
+  return;
+ }
+ $("grid").innerHTML=list.map(p=>{
+  const wa=encodeURIComponent(`Hi Loka Realty, I'm interested in ${p.title} (${p.location}${p.cents?", "+p.cents+" cents":""}) at ₹${p.pricePerCent}/cent.`);
+  return `<article class="card" data-id="${esc(p.id)}">
+   <div class="card-img"><img loading="lazy" src="${esc(p.imageUrl)}" alt="${esc(p.title)}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}'">
+    ${p.badge?`<span class="badge${p.badge==='Exclusive'?' ex':''}">${esc(p.badge)}</span>`:""}</div>
+   <div class="card-body">
+    <div class="price"><b>₹${esc(p.pricePerCent)} <small>/ cent</small></b><span>Total ₹${esc(p.totalPrice)}</span></div>
+    <h4>${esc(p.title)}</h4>
+    <p class="loc"><i class="fa-solid fa-location-dot"></i>${esc(p.location)}${p.cents?" · "+esc(p.cents)+" cents":""}</p>
+    <div class="specs"><span><i class="fa-solid fa-road"></i>${esc(p.roadAccess)}</span><span><i class="fa-solid fa-droplet"></i>${esc(p.water)}</span></div>
+    <div class="actions"><button class="btn btn-ghost" data-open="${esc(p.id)}">View details</button>
+     <a class="btn btn-wa" href="https://wa.me/${WA}?text=${wa}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Inquire</a></div>
+   </div></article>`;
+ }).join("");
+}
+
+/* ===== Detail modal ===== */
+let current=null;
+function openDetail(id){
+ const p=props.find(x=>x.id===id); if(!p) return; current=p;
+ $("mImg").src=p.imageUrl; $("mImg").alt=p.title;
+ $("mBadge").textContent=p.badge||"Verified"; $("mBadge").className="badge"+(p.badge==="Exclusive"?" ex":"");
+ $("mTitle").textContent=p.title; $("mLoc").textContent=p.location+(p.cents?" · "+p.cents+" cents":"");
+ $("mPrice").textContent=`₹${p.pricePerCent} / cent`; $("mTotal").textContent=`Total ₹${p.totalPrice}`;
+ $("mDesc").textContent=p.description||"Verified property in Wayanad. Contact us for full details.";
+ $("mRoad").textContent=p.roadAccess; $("mWater").textContent=p.water; $("mDeed").textContent=p.titleDeed; $("mType").textContent=p.type;
+ $("mWa").href=`https://wa.me/${WA}?text=`+encodeURIComponent(`Hi Loka Realty, I want more details about "${p.title}" in ${p.location}${p.cents?" ("+p.cents+" cents)":""}.`);
+ show("detail");
+}
+function show(id){$(id).classList.add("on")}
+function hide(id){$(id).classList.remove("on")}
+function hideAll(){document.querySelectorAll(".modal.on").forEach(m=>m.classList.remove("on"))}
+function toast(msg){const t=document.createElement("div");t.className="toast";t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),2200)}
+
+/* ===== Events ===== */
+document.addEventListener("click",e=>{
+ const t=e.target;
+ const chip=t.closest(".chip"); if(chip){activeType=chip.dataset.type;buildFilters();render();return}
+ if(t.closest("[data-reset]")){resetFilters();return}
+ if(t.closest("[data-close]")||t.classList.contains("modal")){hideAll();return}
+ if(t.closest(".btn-wa")) return;
+ const card=t.closest(".card"); if(card) openDetail(card.dataset.id);
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")hideAll()});
+function resetFilters(){$("q").value="";$("loc").value="";$("sort").value="";activeType="";buildFilters();render()}
+$("q").addEventListener("input",render);$("loc").addEventListener("change",render);$("sort").addEventListener("change",render);
+$("reset").addEventListener("click",resetFilters);
+$("mShare").addEventListener("click",async()=>{
+ const d={title:current.title,text:`${current.title} – ${current.location} – ₹${current.pricePerCent}/cent`,url:location.href};
+ try{ if(navigator.share) await navigator.share(d); else {await navigator.clipboard.writeText(d.text+" "+d.url);toast("Link copied")} }catch(e){}
+});
+
+/* ===== Admin ===== */
+function sha256js(str){
+ const r=(x,n)=>(x>>>n)|(x<<(32-n)),fr=x=>((x-Math.floor(x))*4294967296)|0,K=[],H=[];
+ for(let p=2;K.length<64;p++){let ok=true;for(let d=2;d*d<=p;d++)if(p%d===0){ok=false;break}
+  if(ok){if(H.length<8)H.push(fr(Math.sqrt(p)));K.push(fr(Math.cbrt(p)))}}
+ const b=new TextEncoder().encode(str),l=b.length,t=(((l+8)>>6)+1)<<6,a=new Uint8Array(t);
+ a.set(b);a[l]=128;const dv=new DataView(a.buffer);dv.setUint32(t-4,(l*8)>>>0);dv.setUint32(t-8,Math.floor(l*8/4294967296));
+ for(let o=0;o<t;o+=64){
+  const W=[];for(let i=0;i<16;i++)W[i]=dv.getUint32(o+i*4);
+  for(let i=16;i<64;i++){const a0=W[i-15],a1=W[i-2];W[i]=(W[i-16]+(r(a0,7)^r(a0,18)^(a0>>>3))+W[i-7]+(r(a1,17)^r(a1,19)^(a1>>>10)))|0}
+  let v=H.slice();
+  for(let i=0;i<64;i++){
+   const t1=(v[7]+(r(v[4],6)^r(v[4],11)^r(v[4],25))+((v[4]&v[5])^(~v[4]&v[6]))+K[i]+W[i])|0;
+   const t2=((r(v[0],2)^r(v[0],13)^r(v[0],22))+((v[0]&v[1])^(v[0]&v[2])^(v[1]&v[2])))|0;
+   v=[(t1+t2)|0,v[0],v[1],v[2],(v[3]+t1)|0,v[4],v[5],v[6]];
+  }
+  for(let i=0;i<8;i++)H[i]=(H[i]+v[i])|0;
+ }
+ return H.map(x=>(x>>>0).toString(16).padStart(8,"0")).join("");
+}
+async function sha(s){
+ try{
+  if(window.crypto&&crypto.subtle){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+ }catch(e){}
+ return sha256js(s);
+}
+const isAdmin=()=>{try{return sessionStorage.getItem(K.admin)==="1"}catch(e){return false}};
+$("adminLink").addEventListener("click",()=>{
+ if(isAdmin()){$("csv").value=store.get(K.url)||SHEET_CSV_URL;updateAdminStatus();show("admin")}
+ else{$("pw").value="";$("loginErr").classList.add("hidden");show("login");setTimeout(()=>$("pw").focus(),50)}
+});
+async function doLogin(e){
+ if(e)e.preventDefault();
+ const err=$("loginErr"),btn=$("loginBtn");
+ err.classList.add("hidden");btn.disabled=true;btn.textContent="Checking…";
+ try{
+  const ok=(await sha($("pw").value.trim()))===ADMIN_HASH;
+  if(ok){
+   try{sessionStorage.setItem(K.admin,"1")}catch(_){}
+   hide("login");$("csv").value=store.get(K.url)||SHEET_CSV_URL;updateAdminStatus();show("admin");
+  }else{err.textContent="Incorrect password. Try again.";err.classList.remove("hidden")}
+ }catch(ex){err.textContent="Login error: "+(ex&&ex.message||ex);err.classList.remove("hidden")}
+ btn.disabled=false;btn.textContent="Sign in";
+}
+$("loginBtn").addEventListener("click",doLogin);
+$("loginForm").addEventListener("submit",doLogin);
+$("pw").addEventListener("keydown",e=>{if(e.key==="Enter")doLogin(e)});
+$("logout").addEventListener("click",()=>{try{sessionStorage.removeItem(K.admin)}catch(_){}hideAll();toast("Logged out")});
+function updateAdminStatus(){
+ const m={sheet:"Connected to Google Sheet",cache:"Sheet unreachable, showing last saved copy",sample:"Showing sample data"}[source];
+ $("adminStatus").innerHTML=`<b>${m}</b><br>${props.length} properties · ${uniq("type").length} types · ${uniq("location").length} areas`;
+}
+$("saveCsv").addEventListener("click",async()=>{
+ if(!isAdmin()) return;
+ const url=$("csv").value.trim(); if(!url){toast("Paste a CSV link first");return}
+ $("adminStatus").textContent="Syncing…";
+ try{props=await loadSheet(url);source="sheet";store.set(K.url,url);buildFilters();render();updateAdminStatus();toast("Sheet connected")}
+ catch(e){$("adminStatus").innerHTML="<b>Could not load the sheet.</b><br>Check it is published to the web as CSV."}
+});
+$("useDefault").addEventListener("click",()=>{
+ if(!isAdmin()) return;
+ store.del(K.url);store.del(K.cache);$("csv").value="";props=SAMPLE;source="sample";buildFilters();render();updateAdminStatus();toast("Using sample data");
+});
+
+/* ===== PWA install ===== */
+let deferred=null;
+const standalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone;
+const ios=/iphone|ipad|ipod/i.test(navigator.userAgent)&&!window.MSStream;
+const dismissed=()=>store.get("loka_install_dismissed")==="1";
+function showInstallUi(){
+ if(standalone) return;
+ $("installBtn").classList.remove("hidden");
+ if(!dismissed()) setTimeout(()=>$("installBar").classList.remove("hidden"),4000);
+}
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e;showInstallUi()});
+window.addEventListener("appinstalled",()=>{$("installBtn").classList.add("hidden");$("installBar").classList.add("hidden");deferred=null;toast("App installed")});
+async function doInstall(){
+ if(deferred){deferred.prompt();await deferred.userChoice;deferred=null;$("installBar").classList.add("hidden")}
+ else if(ios) show("iosHelp");
+ else toast("Use your browser menu → Install / Add to Home screen");
+}
+$("installBtn").addEventListener("click",doInstall);
+$("installBarBtn").addEventListener("click",doInstall);
+$("installBarClose").addEventListener("click",()=>{$("installBar").classList.add("hidden");store.set("loka_install_dismissed","1")});
+if(ios&&!standalone) showInstallUi();
+if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+
+init();
+</script>
+</body>
+</html>
